@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.leaflet-container {
+  .leaflet-pane {
+  }
+
+  .leaflet-control-container {
+    .leaflet-control-attribution {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+    }
+  }
+}
