@@ -3,12 +3,15 @@
 @tailwind utilities;
 
 .leaflet-container {
-  .leaflet-pane {
+  .leaflet-marker-pane {
+    .leaflet-marker-icon {
+      margin-top: -34.2px !important;
+    }
   }
 
   .leaflet-control-container {
     .leaflet-control-attribution {
-      position: fixed;
+      position: absolute;
       bottom: 0;
       right: 0;
     }

@@ -1,4 +1,4 @@
-import StateablePart from "./StateablePart";
+import StateablePart from "../StateablePart";
 
 export default function LastEarthquakesListPage() {
   return (

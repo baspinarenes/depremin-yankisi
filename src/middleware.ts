@@ -7,7 +7,11 @@ export function middleware(request: Request) {
     return NextResponse.next();
   }
 
-  const { origin } = new URL(request.url);
+  const { origin, pathname } = new URL(request.url);
+
+  if (origin && pathname !== "/son-depremler" && !pathname.includes("api/")) {
+    return NextResponse.redirect(`${origin}/son-depremler`);
+  }
 
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set("my-origin", origin);

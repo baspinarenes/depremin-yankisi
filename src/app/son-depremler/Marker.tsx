@@ -1,22 +1,20 @@
+"use client";
+
 import L, { LatLngExpression } from "leaflet";
+import iconRetina from "leaflet/dist/images/marker-icon-2x.png";
+import iconMarker from "leaflet/dist/images/marker-icon.png";
 import { Marker } from "react-leaflet";
-import markerIcon from "../../../../public/marker.png";
 
 const CustomMarker = ({ position }: CustomMarkerProps) => {
-  const icon = new L.Icon({
-    iconUrl: markerIcon.src,
-    iconRetinaUrl: markerIcon.src,
-    iconAnchor: undefined,
-    popupAnchor: undefined,
-    shadowUrl: undefined,
-    shadowSize: undefined,
-    shadowAnchor: undefined,
-    iconSize: new L.Point(40, 40),
+  const icon2 = new L.Icon({
+    iconUrl: iconMarker.src,
+    iconRetinaUrl: iconRetina.src,
+    iconSize: new L.Point(24, 38.4),
   });
 
   return (
     <Marker
-      icon={icon}
+      icon={icon2}
       position={position}
     />
   );

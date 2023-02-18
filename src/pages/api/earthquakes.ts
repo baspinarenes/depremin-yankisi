@@ -25,10 +25,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     afadApiUrl.searchParams.append("maxlon", String(TURKEY_COORDINATES.longitude.max));
 
     const response = await fetch(afadApiUrl);
-    const earthquakeList: RawEarthquake[] = await response.json();
-    const mappedEarthquakeList = mapEarthquakeList(earthquakeList);
+    const earthquakes: RawEarthquake[] = await response.json();
+    const filteredEarthquakes = earthquakes.filter((earthquake) => earthquake.district);
+    const mappedEarthquakes = mapEarthquakeList(filteredEarthquakes);
 
-    res.status(200).send(mappedEarthquakeList as any);
+    res.status(200).send(mappedEarthquakes as any);
   } else {
     res.status(404);
   }

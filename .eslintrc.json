@@ -1,3 +1,4 @@
 {
-  "extends": ["next/core-web-vitals", "plugin:json/recommended"]
+  "extends": ["next/core-web-vitals", "plugin:json/recommended"],
+  "ignorePatterns": ["*.geojson"]
 }

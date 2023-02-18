@@ -5,9 +5,9 @@ export default function Home() {
   return (
     <main className="max-w-5xl mx-auto flex flex-col gap-8">
       <h1 className="text-4xl font-bold break-words mb-6 mx-4 xs:mx-8 mt-6">
-        Deprem
+        Depremin
         <br />
-        Ansiklopedisi
+        Yankısı
       </h1>
       <div className="flex flex-col gap-8">
         <div>

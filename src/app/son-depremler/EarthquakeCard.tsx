@@ -8,7 +8,7 @@ import { useRef, useState } from "react";
 import { lato } from "src/app/fonts";
 import useScrollControl from "src/hooks/useScrollController";
 import { Earthquake } from "src/models/interfaces";
-import LeafletMap from "./harita/LeafletMap";
+import LeafletMap from "./LeafletMap";
 
 export const EarthquakeCard: React.FC<EarthquakeCardProps> = ({ data, index }) => {
   const cardRef = useRef(null);
@@ -95,7 +95,7 @@ export const EarthquakeCard: React.FC<EarthquakeCardProps> = ({ data, index }) =
         >
           <div
             className={clsx(
-              "text-xl font-semibold flex-shrink-0 ml-auto text-gray-400 hidden sm:block lg:flex lg:flex-col",
+              "text-xl font-semibold flex-shrink-0 ml-auto text-gray-400 hidden sm:flex sm:flex-col",
               lato.className
             )}
           >
@@ -106,13 +106,13 @@ export const EarthquakeCard: React.FC<EarthquakeCardProps> = ({ data, index }) =
           {magnitudeText.includes(".") ? magnitudeText : `${magnitudeText}.0`}
         </div>
       </div>
-
       {openedDetail && (
-        <div className={`w-screen sm:w-full h-screen bg-gray-100 overflow-hidden`}>
+        <div className="w-screen sm:w-full h-screen bg-gray-100 overflow-hidden">
           <LeafletMap
             className="w-full h-full lg:absolute lg:left-0 lg:right-0"
             position={[Number(data.coordinate.lat), Number(data.coordinate.lon)]}
             animate={true}
+            city={data.location.city}
           />
         </div>
       )}

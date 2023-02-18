@@ -10,12 +10,12 @@ const MapContainer = dynamic(() => import("react-leaflet").then((mod) => mod.Map
 export default function LeafletMap({ className, position, animate }: LeafletMapProps) {
   return (
     <MapContainer
-      center={[38.964665, 35.24161]}
-      zoom={6}
+      center={position}
+      zoom={5}
       scrollWheelZoom={true}
       className={className}
       zoomControl={false}
-      minZoom={6}
+      minZoom={5}
     >
       <Map
         position={position}

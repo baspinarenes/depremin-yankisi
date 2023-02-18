@@ -2,25 +2,33 @@
 
 import { LatLngExpression } from "leaflet";
 import "leaflet/dist/leaflet.css";
-import { MapContainer } from "react-leaflet";
-import Map from "./Map";
+import dynamic from "next/dynamic";
 
-export default function LeafletMap({ className }: LeafletMapProps) {
-  const DEFAULT_CENTER: LatLngExpression = [37.486893, 37.297027];
+const Map = dynamic(() => import("./Map"), { ssr: false });
+const MapContainer = dynamic(() => import("react-leaflet").then((mod) => mod.MapContainer), { ssr: false });
 
+export default function LeafletMap({ className, position, animate, city }: LeafletMapProps) {
   return (
     <MapContainer
-      center={DEFAULT_CENTER}
-      zoom={13}
-      scrollWheelZoom={false}
+      center={position}
+      zoom={7}
+      scrollWheelZoom={true}
       className={className}
       zoomControl={false}
+      minZoom={7}
     >
-      <Map />
+      <Map
+        position={position}
+        animate={animate}
+        city={city}
+      />
     </MapContainer>
   );
 }
 
 interface LeafletMapProps {
   className: string;
+  position: LatLngExpression;
+  animate: boolean;
+  city: string;
 }

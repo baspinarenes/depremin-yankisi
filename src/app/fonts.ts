@@ -10,7 +10,7 @@ export const lato = Lato({
 
 export const oswald = Oswald({
   variable: "--font-oswald",
-  weight: ["700"],
+  weight: ["400", "700"],
   subsets: ["latin"],
   style: ["normal"],
   display: "swap",
