@@ -8,7 +8,7 @@ export const mapEarthquake = (earthquake: RawEarthquake): Earthquake => {
       lat: latitude,
       lon: longitude,
     },
-    date,
+    date: `${date}Z`,
     depth,
     eventID,
     location: {

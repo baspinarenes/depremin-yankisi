@@ -1,7 +1,7 @@
 "use client";
 
 import clsx from "clsx";
-import { differenceInHours } from "date-fns";
+import { differenceInMinutes } from "date-fns";
 import format from "date-fns/format";
 import trLocale from "date-fns/locale/tr";
 import { useRef, useState } from "react";
@@ -41,7 +41,7 @@ export const EarthquakeCard: React.FC<EarthquakeCardProps> = ({ data, index }) =
 
   const magnitudeText = String(data.magnitude);
   const currentDate = new Date();
-  const occursLastOneHour = differenceInHours(currentDate, new Date(data.date)) < 1;
+  const occursLastHalfHour = differenceInMinutes(currentDate, new Date(data.date)) < 30;
 
   useScrollControl(!openedDetail);
 
@@ -51,8 +51,8 @@ export const EarthquakeCard: React.FC<EarthquakeCardProps> = ({ data, index }) =
       className={clsx(
         "earthquake-card first:border-t last:border-b-0 flex flex-col",
         getBgColor(Number(data.magnitude)),
-        occursLastOneHour && "animate-pulse bg-red-500",
-        openedDetail && "lg:animate-none lg:bg-transparent"
+        occursLastHalfHour && !openedDetail && "animate-shake",
+        !occursLastHalfHour && openedDetail && "lg:animate-none"
       )}
       onClickCapture={(e: any) => {
         (cardRef.current as any).scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });

@@ -16,7 +16,7 @@ export default function LastEarthquakesPage() {
           Depremler
         </h1>
         <p className="max-w-5xl mx-auto w-full mb-6 px-4 xs:px-8">
-          Deprem verileri Afad&apos;dan alınmaktadır ve son bir yılda meydana gelen depremleri kapsamaktadır.
+          Son bir yılda meydana gelen 4 ve üzeri depremleri kapsayan bu liste Afad tarafından sağlanmaktadır. İçerik 30 saniyede bir güncellenmektedir.
         </p>
         <input
           type="text"

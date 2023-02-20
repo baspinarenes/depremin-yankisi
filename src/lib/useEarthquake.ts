@@ -11,7 +11,7 @@ export const useEarthquake = ({
   startDate?: Date;
   endDate?: Date;
 }) => {
-  const { data, error, isLoading } = useSWR<Earthquake[]>(`/api/earthquakes`, fetcher);
+  const { data, error, isLoading } = useSWR<Earthquake[]>(`/api/earthquakes`, fetcher, { refreshInterval: 30000 });
 
   return {
     earthquakes: data,

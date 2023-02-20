@@ -9,6 +9,31 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    keyframes: {
+      shake: {
+        "0%": {
+          transform: "translateX(0)"
+        },
+        "6.5%": {
+          transform: "translateX(-5px)"
+        },
+        "18.5%": {
+          transform: "translateX(5px)"
+        },
+        "31.5%": {
+          transform: "translateX(-5px)"
+        },
+        "43.5%": {
+          transform: "translateX(5px)"
+        },
+        "50%": {
+          transform: "translateX(0)"
+        },
+      }
+    },
+    animation: {
+      shake: "shake 2s 900"
+    },
     screens: {
       xs: "375px",
       sm: "640px",
