@@ -50,7 +50,7 @@ export default function StateablePart() {
         }}
       >
         BİLDİĞİMİZ GİBİ ÜLKEMİZ DEPREM KUŞAĞINDA OLAN VE BİRÇOK DEPREM YAŞAYAN BİR ÜLKEDİR. ELİMİZDE İSTATİSTİKLERE
-        RAĞMEN ALINMAYAN ÖNLEMLER SEBEBİYLE CANLARIMIZ YİTİP GİTMEKTEDİR. YÜCE ALLAH BİLİME OLAN İNANCIMIZI ARTTIRSIN VE
+        RAĞMEN ALINMAYAN ÖNLEMLER SEBEBİYLE CANLARIMIZ YİTİP GİTMEKTEDİR. ALLAH BİLİME OLAN İNANCIMIZI ARTTIRSIN VE
         KALDIRAMAYACAĞIMIZ ACILARI SIRTIMIZA YÜKLEMESİN.
         <span
           className={clsx("absolute bottom-4 text-sm font-normal text-[#999] left-[calc(50%-38px)]", oswald.className)}

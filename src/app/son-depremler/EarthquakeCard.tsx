@@ -107,7 +107,7 @@ export const EarthquakeCard: React.FC<EarthquakeCardProps> = ({ data, index }) =
         </div>
       </div>
       {openedDetail && (
-        <div className="w-screen sm:w-full h-screen bg-gray-100 overflow-hidden">
+        <div className="w-screen sm:w-full h-screen overflow-hidden">
           <LeafletMap
             className="w-full h-full lg:absolute lg:left-0 lg:right-0"
             position={[Number(data.coordinate.lat), Number(data.coordinate.lon)]}
